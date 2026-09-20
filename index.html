@@ -6,7 +6,7 @@
   <title>The Blue Kargo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400&family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -24,28 +24,27 @@
     body {
       color: #000;
       position: relative;
-      font-family: "Archivo", Arial, sans-serif;
+      font-family: "Inter", Helvetica, Arial, sans-serif;
     }
 
     nav {
       position: absolute;
-      top: clamp(24px, 4vh, 48px);
-      left: clamp(24px, 4vw, 64px);
+      top: 32px;
+      left: 32px;
       display: flex;
       flex-direction: column;
-      gap: clamp(6px, 1vh, 10px);
+      gap: 7px;
       z-index: 2;
     }
 
     nav a {
       color: #000;
       text-decoration: none;
-      font-family: "Archivo", Arial, sans-serif;
-      font-size: clamp(11px, 1vw, 15px);
-      font-weight: 300;
-      letter-spacing: 0.16em;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
       line-height: 1;
-      text-transform: lowercase;
+      text-transform: uppercase;
     }
 
     main {
@@ -54,7 +53,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      padding-left: clamp(24px, 4vw, 64px);
+      padding-left: 32px;
     }
 
     h1 {
@@ -62,11 +61,11 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: clamp(10px, 1.35vw, 20px);
-      font-family: "Archivo", Arial, sans-serif;
-      font-size: clamp(58px, 8.8vw, 140px);
-      font-weight: 400;
-      line-height: 0.84;
+      gap: clamp(7px, 0.8vw, 12px);
+      font-family: "Inter", Helvetica, Arial, sans-serif;
+      font-size: clamp(56px, 8vw, 128px);
+      font-weight: 600;
+      line-height: 0.88;
       letter-spacing: 0;
       text-transform: uppercase;
       white-space: nowrap;
@@ -75,8 +74,8 @@
     h1 span {
       display: block;
       width: max-content;
-      line-height: 0.84;
-      letter-spacing: 0.01em;
+      line-height: 0.88;
+      letter-spacing: 0;
     }
   </style>
 </head>
