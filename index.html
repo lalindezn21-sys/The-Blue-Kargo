@@ -83,11 +83,35 @@
 
     .description {
       margin: clamp(24px, 3vw, 40px) 0 0;
-      max-width: 430px;
+      width: min(360px, 78vw);
       font-size: 12px;
       font-weight: 300;
-      line-height: 1.55;
+      line-height: 1.65;
       letter-spacing: 0.01em;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      color: #000;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .read-more .arrow {
+      font-size: 16px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    .read-more .label {
+      border-bottom: 1px solid #000;
+      padding-bottom: 3px;
     }
   </style>
 </head>
@@ -106,6 +130,10 @@
         <span>KARGO</span>
       </h1>
       <p class="description">The Blue Kargo was designed in the hands of creators who long to ensure the perfect workspace for those handling the busy job of pre-production in the cinema industry.</p>
+      <a class="read-more" href="#about" aria-label="Read more about The Blue Kargo">
+        <span class="arrow" aria-hidden="true">→</span>
+        <span class="label">read more</span>
+      </a>
     </section>
   </main>
 </body>
