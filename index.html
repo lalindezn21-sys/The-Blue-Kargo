@@ -28,6 +28,15 @@
       background-repeat: no-repeat;
     }
 
+    #scroll-wipe {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: #fff;
+      transform: translateY(100%);
+      pointer-events: none;
+    }
+
     nav {
       position: absolute;
       top: 32px;
@@ -137,6 +146,8 @@
   </style>
 </head>
 <body>
+  <div id="scroll-wipe" aria-hidden="true"></div>
+
   <nav aria-label="Primary navigation">
     <a href="#about">about</a>
     <a href="#contact">contact</a>
@@ -156,5 +167,36 @@
       </a>
     </section>
   </main>
+
+  <script>
+    const wipe = document.getElementById("scroll-wipe");
+    let isWiping = false;
+
+    function runWipe() {
+      if (isWiping) return;
+      isWiping = true;
+
+      wipe.animate(
+        [
+          { transform: "translateY(100%)" },
+          { transform: "translateY(0%)" },
+          { transform: "translateY(-100%)" }
+        ],
+        {
+          duration: 950,
+          easing: "cubic-bezier(0.76, 0, 0.24, 1)"
+        }
+      ).finished.finally(() => {
+        wipe.style.transform = "translateY(100%)";
+        isWiping = false;
+      });
+    }
+
+    window.addEventListener("wheel", (event) => {
+      if (Math.abs(event.deltaY) > 4) runWipe();
+    }, { passive: true });
+
+    window.addEventListener("touchmove", runWipe, { passive: true });
+  </script>
 </body>
 </html>
