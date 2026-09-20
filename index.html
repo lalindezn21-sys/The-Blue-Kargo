@@ -6,35 +6,68 @@
   <title>The Blue Kargo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400&family=Archivo+Black&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
       margin: 0;
       width: 100%;
       height: 100%;
+      overflow: hidden;
       background: #fff;
     }
 
     body {
       color: #000;
+      position: relative;
+      font-family: "Archivo", Arial, sans-serif;
+    }
+
+    nav {
+      position: absolute;
+      top: clamp(24px, 4vh, 48px);
+      left: clamp(24px, 4vw, 64px);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(6px, 1vh, 10px);
+      z-index: 2;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-family: "Archivo", Arial, sans-serif;
+      font-size: clamp(11px, 1vw, 15px);
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    main {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      padding-left: clamp(24px, 4vw, 64px);
     }
 
     h1 {
       margin: 0;
-      padding: 0 0 0 0.08em;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: center;
-      gap: clamp(14px, 1.8vw, 28px);
-      font-family: "Archivo Black", Arial, sans-serif;
-      font-size: clamp(64px, 10vw, 160px);
-      line-height: 0.78;
-      font-weight: 900;
-      letter-spacing: -0.065em;
+      gap: clamp(10px, 1.35vw, 20px);
+      font-family: "Archivo", Arial, sans-serif;
+      font-size: clamp(58px, 8.8vw, 140px);
+      font-weight: 400;
+      line-height: 0.84;
+      letter-spacing: 0;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -42,20 +75,24 @@
     h1 span {
       display: block;
       width: max-content;
-      line-height: 0.78;
-      text-align: left;
-    }
-
-    h1 span:first-child {
-      transform: translateX(0.015em);
+      line-height: 0.84;
+      letter-spacing: 0.01em;
     }
   </style>
 </head>
 <body>
-  <h1>
-    <span>THE</span>
-    <span>BLUE</span>
-    <span>KARGO</span>
-  </h1>
+  <nav aria-label="Primary navigation">
+    <a href="#about">about</a>
+    <a href="#contact">contact</a>
+    <a href="#you">you</a>
+  </nav>
+
+  <main>
+    <h1 aria-label="The Blue Kargo">
+      <span>THE</span>
+      <span>BLUE</span>
+      <span>KARGO</span>
+    </h1>
+  </main>
 </body>
 </html>
